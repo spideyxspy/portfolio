@@ -224,15 +224,6 @@ const PROJECT_SKILLS = {
   },
 };
 export type Project = {
-  id: string;
-  category: string;
-  title: string;
-  src: string;
-  screenshots: string[];
-  skills: { frontend: Skill[]; backend: Skill[] };
-  content: React.ReactNode | any;
-  github?: string;
-  live: string;
 };
 const projects: Project[] = [
 ];
