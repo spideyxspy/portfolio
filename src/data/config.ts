@@ -28,7 +28,7 @@ const config = {
     "Capcut",
   ],
   author: "Spidy Spy",
-  email: "sarfrajkhangamer1234@gmail.com",
+  email: "murphyiee@outlook.com",
   site: "https://slidieee-git-main-murphyis-projects-46da13c8.vercel.app/",
 
   // for github stars button
