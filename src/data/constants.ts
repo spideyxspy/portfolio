@@ -88,12 +88,12 @@ using use = useUsing("use")`,
   },
   [SkillNames.NEXTJS]: {
     id: 7,
-    name: "nextjs",
-    label: "Next.js",
+    name: "",
+    label: "",
     shortDescription:
       "the drama queen of front-end frameworks, and we stan! 👑📜",
     color: "#fff",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjl.sv",
   },
   [SkillNames.TAILWIND]: {
     id: 8,
@@ -269,7 +269,7 @@ export const EXPERIENCE: Experience[] = [
       // "Shipped high-impact features end-to-end from requirements to production.",
     ],
     skills: [
-      "",
+      SkillNames.NEXTJS,
 
     ],
   },
