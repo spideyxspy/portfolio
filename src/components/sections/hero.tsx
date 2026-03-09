@@ -135,7 +135,7 @@ const HeroSection = () => {
                       className="cursor-can-hover"
                     >
                       <Button variant={"outline"}>
-                        <SiLinkedin size={24} />
+                        <SiLinkerd size={24} />
                       </Button>
                     </Link>
                   </div>
