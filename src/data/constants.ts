@@ -6,7 +6,7 @@ export enum SkillNames {
   CSS = "css",
   REACT = "react",
   VUE = "vue",
-  NEXTJS = "nextjs",
+  NEXTJS = "",
   TAILWIND = "tailwind",
   NODEJS = "nodejs",
   EXPRESS = "express",
@@ -258,25 +258,19 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    startDate: "Dec 2024",
+    startDate: "^",
     endDate: "Present",
-    title: "Full Stack Developer",
-    company: "OmniNexus Sdn Bhd",
+    title: "Professional Editor",
+    company: "",
     description: [
-      "Built a custom image editor from scratch, cutting $4.8k/year in SaaS costs.",
-      "Architected async job queues processing 1k+ AI tasks daily with bulletproof reliability.",
-      "Optimized media delivery pipeline, slashing asset load times by 40%.",
-      "Shipped high-impact features end-to-end from requirements to production.",
+      "2 years of experience in editing and designing.",
+      "fulffiled hundreads of clients.",
+      // "Optimized media delivery pipeline, slashing asset load times by 40%.",
+      // "Shipped high-impact features end-to-end from requirements to production.",
     ],
     skills: [
       SkillNames.NEXTJS,
-      SkillNames.TS,
-      SkillNames.REACT,
-      SkillNames.NODEJS,
-      SkillNames.POSTGRES,
-      SkillNames.MONGODB,
-      SkillNames.DOCKER,
-      SkillNames.GCP,
+
     ],
   },
 ];
