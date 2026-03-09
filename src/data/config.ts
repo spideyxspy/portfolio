@@ -1,5 +1,5 @@
 const config = {
-  title: "Naresh Khatri | Full-Stack Developer",
+  title: "Spidy Spy | Editor",
   description: {
     long: "Explore the portfolio of Naresh, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including Coding Ducks, The Booking Desk, Ghostchat, and more. Let's build something amazing together!",
     short:
@@ -23,12 +23,12 @@ const config = {
     "Spline",
     "Framer Motion",
   ],
-  author: "Naresh Khatri",
+  author: "Spidy Spy",
   email: "naresh.khatri2345@gmail.com",
   site: "https://nareshkhatri.site",
 
   // for github stars button
-  githubUsername: "naresh-khatri",
+  githubUsername: "murphyie",
   githubRepo: "3d-portfolio",
 
   get ogImg() {
