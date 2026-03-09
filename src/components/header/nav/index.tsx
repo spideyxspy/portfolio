@@ -42,6 +42,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           />
           {/* <Footer /> */}
         </div>
+      </div>
     </motion.div>
   );
 };
