@@ -44,7 +44,7 @@ const config = {
     instagram: "https://www.instagram.com/spideyxspy",
     facebook: "https://www.facebook.com/spidyspy/",
     github: "https://github.com/issspaaaiderr",
-    discord : "https://discord.com/spidyxspy",
+    discord : "https://discord.gg/sfXUSErP",
   },
 };
 export { config };
