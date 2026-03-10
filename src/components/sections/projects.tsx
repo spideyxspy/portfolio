@@ -13,7 +13,7 @@ const ProjectsSection = () => {
   return (
     <SectionWrapper
       id="projects"
-      className="relative z-20 max-w-7xl mx-auto py-10 px-4"
+      className="relative z-[100] max-w-7xl mx-auto py-10 px-4"
     >
       <SectionHeader id="projects" title="Projects" />
 
@@ -22,21 +22,28 @@ const ProjectsSection = () => {
         {projects.map((project) => (
           <motion.div
             key={project.title}
-            className="group relative rounded-lg overflow-hidden cursor-pointer shadow-lg"
+            className="group relative rounded-xl overflow-hidden cursor-pointer shadow-xl bg-black/20 backdrop-blur"
+            initial={{ scale: 1 }}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
             onClick={() => setSelectedMedia(project)}
           >
-            {/* Media Container */}
-            <div className="relative w-full h-[220px]">
+            {/* Media */}
+            <div className="relative w-full h-[220px] overflow-hidden">
 
               {project.type === "image" ? (
-                <Image
-                  src={project.src}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <motion.div
+                  whileHover={{ scale: 1.12 }}
+                  transition={{ duration: 0.4 }}
+                  className="w-full h-full"
+                >
+                  <Image
+                    src={project.src}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
               ) : (
                 <video
                   src={project.src}
@@ -49,30 +56,36 @@ const ProjectsSection = () => {
                 />
               )}
 
-              {/* Title Overlay */}
-              <div className="absolute bottom-0 left-0 w-full bg-black/60 text-white p-3 text-sm font-medium opacity-0 group-hover:opacity-100 transition duration-300">
-                {project.title}
-              </div>
-
+              {/* Overlay */}
+              <motion.div
+                className="absolute inset-0 flex items-end bg-black/60"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="p-4 text-white text-lg font-semibold">
+                  {project.title}
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Fullscreen Modal */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedMedia && (
           <motion.div
-            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-[200]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedMedia(null)}
           >
             <motion.div
-              initial={{ scale: 0.7, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.7, opacity: 0 }}
+              initial={{ scale: 0.7 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.7 }}
               transition={{ duration: 0.35 }}
               className="max-w-[90vw] max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
@@ -97,7 +110,6 @@ const ProjectsSection = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
     </SectionWrapper>
   );
 };
