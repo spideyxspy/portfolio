@@ -22,7 +22,7 @@ const projects: Project[] = [
   },
   {
     title: "Product Animation",
-    src: "/assets/projects-screenshots/project4.jpg",
+    src: "/assets/projects-screenshots/project4.jpeg",
     type: "image",
   },
   {
