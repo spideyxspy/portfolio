@@ -17,42 +17,47 @@ const ProjectsSection = () => {
     >
       <SectionHeader id="projects" title="Projects" />
 
-      {/* Responsive Grid */}
+      {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
         {projects.map((project) => (
           <motion.div
             key={project.title}
-            className="flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
+            className="relative rounded-lg overflow-hidden cursor-pointer"
+            whileHover={{ scale: 1.06 }}
+            transition={{ duration: 0.35 }}
             onClick={() => setSelectedMedia(project)}
           >
-            {/* Card */}
-            <div
-              className="relative w-full rounded-lg overflow-hidden cursor-pointer"
-              style={{ aspectRatio: "3/2" }}
-            >
-              {/* Media */}
+            {/* Media Container */}
+            <div className="relative w-full h-[220px]">
+
               {project.type === "image" ? (
                 <Image
                   src={project.src}
                   alt={project.title}
                   fill
-                  className="absolute w-full h-full object-cover transition-transform hover:scale-[1.05]"
+                  className="object-cover transition-transform duration-500 hover:scale-110"
                 />
               ) : (
                 <video
                   src={project.src}
                   muted
-                  className="absolute w-full h-full object-cover"
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
                 />
               )}
 
-              {/* Gradient Overlay */}
-              <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none">
-                <div className="flex flex-col h-full justify-end p-4 text-white">
-                  <div className="text-lg">{project.title}</div>
+              {/* Overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-0 bg-black/60 flex items-end"
+              >
+                <div className="p-4 text-white text-lg font-medium">
+                  {project.title}
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         ))}
@@ -62,17 +67,18 @@ const ProjectsSection = () => {
       <AnimatePresence>
         {selectedMedia && (
           <motion.div
-            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedMedia(null)}
           >
             <motion.div
-              className="max-w-[90%] max-h-[90%]"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
+              initial={{ scale: 0.7, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.7, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="max-w-[90vw] max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
               {selectedMedia.type === "image" ? (
@@ -81,14 +87,14 @@ const ProjectsSection = () => {
                   alt={selectedMedia.title}
                   width={1920}
                   height={1080}
-                  className="max-w-full max-h-[90vh] object-contain rounded-md"
+                  className="max-h-[90vh] object-contain rounded-lg"
                 />
               ) : (
                 <video
                   src={selectedMedia.src}
                   controls
                   autoPlay
-                  className="max-w-full max-h-[90vh] object-contain rounded-md"
+                  className="max-h-[90vh] rounded-lg"
                 />
               )}
             </motion.div>
