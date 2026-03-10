@@ -29,7 +29,7 @@ const config = {
   ],
   author: "Spidy Spy",
   email: "sarfrajkhangamer1234@gmail.com",
-  site: "https://slidieee-git-main-murphyis-projects-46da13c8.vercel.app/",
+  site: "https://spidyspy.vercel.app/",
 
   // for github stars button
   githubUsername: "murphyie",
