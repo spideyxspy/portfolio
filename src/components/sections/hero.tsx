@@ -11,7 +11,7 @@ import {
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkerd, SiX, SiInstagram } from "react-icons/si";
+import { SiGithub, SiLinkerd, SiX, SiInstagram, SiDiscord } from "react-icons/si";
 import { config } from "@/data/config";
 
 import SectionWrapper from "../ui/section-wrapper";
@@ -91,7 +91,7 @@ const HeroSection = () => {
                   <BoxReveal delay={2} width="100%" >
                     <Button className="flex items-center gap-2 w-full">
                       <File size={24} />
-                      <p>BOOM</p>
+                      <p>CONNECT</p>
                     </Button>
                   </BoxReveal>
                 </Link>
@@ -121,12 +121,12 @@ const HeroSection = () => {
                       </Button>
                     </Link>
                     <Link
-                      href={config.social.github}
+                      href={config.social.discord}
                       target="_blank"
                       className="cursor-can-hover"
                     >
                       <Button variant={"outline"}>
-                        <SiGithub size={24} />
+                        <SiDiscord size={24} />
                       </Button>
                     </Link>
                     <Link
