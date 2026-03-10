@@ -41,9 +41,10 @@ const config = {
   social: {
     twitter: "https://x.com/spidyspy",
     linkedin: "https://www.linkedin.com/in/spidyspy",
-    instagram: "https://www.instagram.com/sakuna8427",
+    instagram: "https://www.instagram.com/spideyxspy",
     facebook: "https://www.facebook.com/spidyspy/",
     github: "https://github.com/spidyspy",
+    discord : "https://discord.com/spidyspy",
   },
 };
 export { config };
